@@ -2,7 +2,7 @@ name: Date
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '5 1 * * *'
     
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
           python-version: '3.11'
 
       - name: Run script
-        run: python ./python.py
+        run: python ../python.py
 
       - name: Add, Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
