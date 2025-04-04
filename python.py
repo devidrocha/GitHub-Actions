@@ -1,8 +1,8 @@
-import datetime
+from datetime import datetime, timedelta
 
 def actualizar_readme():
-    hora_actual = datetime.datetime.now().strftime("%H:%M:%S")
-
+    hora_actual = (datetime.strptime(datetime.now().strftime("%H:%M:%S"), "%H:%M:%S") + timedelta(hours=6)).strftime("%H:%M:%S")
+    
     try:
         with open("README.md", "r") as archivo:
             contenido = archivo.readlines()
@@ -11,8 +11,8 @@ def actualizar_readme():
         return
 
     for i, linea in enumerate(contenido):
-        if "Repositorio actualizado automaticamente mediante un github actions a las" in linea:
-            contenido[i] = f"* **Repositorio actualizado automaticamente mediante un github actions a las {hora_actual}**\n"
+        if "Repositorio actualizado automáticamente mediante una GitHub Action a las:" in linea:
+            contenido[i] = f"* **Repositorio actualizado automáticamente mediante una GitHub Action a las: `{hora_actual}hrs.`**\n"
             break
 
     try:
