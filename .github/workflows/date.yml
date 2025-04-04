@@ -28,5 +28,5 @@ jobs:
         with:
           commit_message: Update README.md
           commit_user_name: David Rocha [GitHub Actions]
-          commit_user_mail: blodoffer@yahoo.com
+          commit_user_email: blodoffer@yahoo.com
           commit_author: devidrocha
