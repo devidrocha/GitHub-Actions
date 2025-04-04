@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 def actualizar_readme():
-    hora_actual = (datetime.strptime(datetime.now().strftime("%H:%M:%S"), "%H:%M:%S") + timedelta(hours=6)).strftime("%H:%M:%S")
+    hora_actual = (datetime.strptime(datetime.now().strftime("%H:%M:%S"), "%H:%M:%S") - timedelta(hours=6)).strftime("%H:%M:%S")
     
     try:
         with open("README.md", "r") as archivo:
